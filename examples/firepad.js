@@ -2786,7 +2786,9 @@ firepad.EntityManager = (function () {
     var elt = this.tryRenderToElement_(entity, 'export') ||
               this.tryRenderToElement_(entity, 'getHtml') ||
               this.tryRenderToElement_(entity, 'render');
-    elt.setAttribute('data-firepad-entity', entity.type);
+    if (elt) {
+        elt.setAttribute('data-firepad-entity', entity.type);
+    }
     return elt;
   };
 
